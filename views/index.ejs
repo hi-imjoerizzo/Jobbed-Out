@@ -25,11 +25,11 @@
 
     <section id="jobs-container" ng-controller="JobsController as jobCtrl">
       <button id="add-job">Add a Job</button>
-      <ul id="jobList" ng-repeat="job in jobCtrl.jobs">
+      <ul id="jobList" ng-repeat="job in jobCtrl.data.docs">
         <job />
       </ul>
 
-      <button id="load-more">Load More</button>
+      <button id="load-more" ng-click="jobCtrl.loadMore()">Load More</button>
     </section>
 
 
