@@ -18,5 +18,6 @@
         console.log("hugeFuckingFailure: ", response.data);
 
     });
+    return this;
   });
 })();
