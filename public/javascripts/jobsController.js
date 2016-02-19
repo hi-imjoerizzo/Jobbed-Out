@@ -17,6 +17,16 @@
       console.log("hugeFuckingFailure: ", response.data);
 
     });
+    this.loadMore = function(){
+      var self = this;
+
+      $http({
+        method:"GET",
+        url: api,
+        data:{
+        }
+      })
+    }
     return this;
   });
 })();
