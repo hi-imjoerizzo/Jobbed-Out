@@ -23,12 +23,15 @@
 
     this.loadMore = function() {
       var self = this;
+      var nextPage = parseInt(currentPage) + 1;
+
+      console.log(nextPage);
 
       $http({
         method: 'GET',
         url: api,
-        data: {
-          page: currentPage + 1
+        params: {
+          page: nextPage
         }
       }).then(function successCallback(response) {
         console.log("success", response.data);
