@@ -21,6 +21,7 @@
 
     });
 
+
     this.loadMore = function() {
       var self = this;
       var nextPage = parseInt(currentPage) + 1;
