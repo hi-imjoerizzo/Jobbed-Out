@@ -13,4 +13,4 @@ app.controller('ListController', function($scope) {
   //   title: '',
   //   company:''
 
-  }];
+  // }];

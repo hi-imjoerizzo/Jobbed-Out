@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="JobbedOut">
+<html ng-app='JobbedOut'>
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
@@ -23,41 +23,12 @@
       </select>
     </form>
 
-    <section id="jobs-container" ng-controller="JobsController as jobsCtrl">
+    <section id="jobs-container" ng-controller="JobsController as jobCtrl">
       <button id="add-job">Add a Job</button>
-      <ul id="jobList" ng-repeat="job in jobsCtrl.jobs"><job></job></ul>
-      <!-- <ul>
-        <li class="job">
-          <h3><a href="#">Software Engineer</a></h3>
-          <p>at <strong>Acme Inc.</strong>, posted at 9:23am on February 19, 2016
-          <button class="upvote">Upvote</button>
-          <button class="delete">Delete</button>
-        </li>
-        <li class="job">
-          <h3><a href="#">Software Engineer</a></h3>
-          <p>at <strong>Acme Inc.</strong>, posted at 9:23am on February 19, 2016
-          <button class="upvote">Upvote</button>
-          <button class="delete">Delete</button>
-        </li>
-        <li class="job">
-          <h3><a href="#">Software Engineer</a></h3>
-          <p>at <strong>Acme Inc.</strong>, posted at 9:23am on February 19, 2016
-          <button class="upvote">Upvote</button>
-          <button class="delete">Delete</button>
-        </li>
-        <li class="job">
-          <h3><a href="#">Software Engineer</a></h3>
-          <p>at <strong>Acme Inc.</strong>, posted at 9:23am on February 19, 2016
-          <button class="upvote">Upvote</button>
-          <button class="delete">Delete</button>
-        </li>
-        <li class="job">
-          <h3><a href="#">Software Engineer</a></h3>
-          <p>at <strong>Acme Inc.</strong>, posted at 9:23am on February 19, 2016
-          <button class="upvote">Upvote</button>
-          <button class="delete">Delete</button>
-        </li>
-      </ul> -->
+      <ul id="jobList" ng-repeat="job in jobCtrl.jobs">
+        <job />
+      </ul>
+
       <button id="load-more">Load More</button>
     </section>
 
