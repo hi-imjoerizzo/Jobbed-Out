@@ -10,9 +10,9 @@
       method: "GET",
       url: "/api/v1/jobs"
     }).then(function successCallback(response) {
-      console.log("success", response.data);
+      console.log("success", response.data.docs);
 
-      self.jobs = response.data;
+      self.jobs = response.data.docs;
     }, function errorCallback(response) {
       console.log("hugeFuckingFailure: ", response.data);
 
