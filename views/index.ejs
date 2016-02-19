@@ -8,22 +8,23 @@
     <script src="/javascripts/jobsController.js"></script>
     <script src="/javascripts/jobView.js"></script>
   </head>
-  <body>
+  <body ng-controller="JobsController as jobCtrl">
     <h1><%= title %></h1>
 
-    <form action="">
-      <input type="search" id="search-title" placeholder="Search by Title">
-      <input type="search" id="search-company" placeholder="Search by Company">
+    <form action="" ng-submit="jobCtrl.searchJobs($event)">
+      <input type="search" id="search-title" placeholder="Search by Title" ng-model="searchTitle">
+      <input type="search" id="search-company" placeholder="Search by Company" ng-model="searchCompany">
       Sort by:
-      <select id="sort">
+      <select id="sort" ng-model="sort" ng-change="jobCtrl.sortJobs(sort)">
         <option value="">Choose...</option>
         <option value="createdAt">Created At</option>
         <option value="title">Title</option>
         <option value="company">Company</option>
       </select>
+      <input type="submit" id="submit" value="Submit" ng-hide="true" />
     </form>
 
-    <section id="jobs-container" ng-controller="JobsController as jobCtrl">
+    <section id="jobs-container">
       <button id="add-job">Add a Job</button>
       <ul id="jobList" ng-repeat="job in jobCtrl.data.docs">
         <job />
