@@ -24,6 +24,9 @@
 
     this.loadMore = function() {
       var self = this;
+      var nextPage = currentPage + 1;
+
+        console.log
 
       $http({
         method: 'GET',
