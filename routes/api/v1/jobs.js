@@ -67,7 +67,9 @@ router.post('/', function(req, res, next) {
 // Upvote route
 router.post('/:id/upvote', function(req, res, next) {
 
-  Job.findByIdAndUpdate(req.params.id, {$push: { upvotes: req.body.userId }}, function(err, job) {
+  var userId = Math.floor(Math.random() * 1000000000) ;
+
+  Job.findByIdAndUpdate(req.params.id, {$push: { upvotes: userId }}, function(err, job) {
     if (err) {
       console.log(err);
       throw err;

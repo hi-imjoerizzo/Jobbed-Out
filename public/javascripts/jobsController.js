@@ -91,6 +91,41 @@
       });
     }
 
+    this.upvoteJob = function(id) {
+      var self = this;
+
+      $http({
+        method: 'POST',
+        url: api + id + '/upvote',
+      }).then(function successCallback(response) {
+        console.log("success", response.data);
+
+        self.data = response.data;
+        currentPage = response.data.page;
+      }, function errorCallback(response) {
+        console.log("hugeFuckingFailure: ", response.data);
+
+      });
+    }
+
+    this.destroyJob = function(id) {
+      var self = this;
+
+      $http({
+        method: 'DELETE',
+        url: api + id,
+      }).then(function successCallback(response) {
+        console.log("success", response.data);
+
+        self.data = response.data;
+        currentPage = response.data.page;
+      }, function errorCallback(response) {
+        console.log("hugeFuckingFailure: ", response.data);
+
+      });
+    }
+
+
     return this;
   });
 })();

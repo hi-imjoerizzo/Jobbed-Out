@@ -1,6 +1,6 @@
 <li class="job">
   <h3><a href="{{job.link}}">{{job.title}}</a></h3>
   <p>at <strong>{{job.company}}</strong>, posted at {{job.createdAt}}
-  <button class="upvote">Upvote</button>
-  <button class="delete">Delete</button>
+  <button class="upvote" ng-click="jobCtrl.upvoteJob(job._id)">Upvote</button>
+  <button class="delete" ng-click="jobCtrl.destroyJob(job._id)">Delete</button>
 </li>
